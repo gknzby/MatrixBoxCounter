@@ -1,0 +1,32 @@
+Problem #1
+
+2 square (s) of size 1
+1 square (s) of size 2
+
+*******************************************
+
+Problem #2
+
+No completed squares can be found.
+
+*******************************************
+
+Problem #3
+
+8 square (s) of size 1
+6 square (s) of size 2
+4 square (s) of size 3
+3 square (s) of size 4
+1 square (s) of size 6
+1 square (s) of size 7
+
+*******************************************
+
+Problem #4
+
+9 square (s) of size 1
+4 square (s) of size 2
+1 square (s) of size 3
+
+*******************************************
+
