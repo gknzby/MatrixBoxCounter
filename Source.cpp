@@ -4,8 +4,31 @@
 
 using namespace std;
 
+void printBox(int** hArray, int** vArray, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1; j++)
+        {
+            cout << 'o';
+            if (hArray[i][j] == 1) cout << "__";
+            else cout << "  ";
+        }
+        cout << 'o';
+        cout << "\n";
+        for (int j = 0; j < size; j++)
+        {
+            if (vArray[j][i] == 1) cout << '|';
+            else cout << ' ';
+            cout << "  ";
+        }
+        cout << '\n';
+    }
+}
+
 int checkBox(int** hArray, int** vArray, int size, int boxSize)
 {
+    
     int boxCount = 0;
     bool box = false;
 
@@ -84,10 +107,12 @@ int main()
             if (hv == 'H')
             {
                 hArray[k - 1][l - 1]++; //if there is line so value is 1
+                cout << "H: " << k << '-' << l << '\n';
             }
             else
             {
                 vArray[k - 1][l - 1]++; //if there is line so value is 1
+                cout << "V: " << k << '-' << l << '\n';
             }
         }
         /////////////////////////////////
@@ -96,7 +121,7 @@ int main()
         int boxCount;
         string boxCountStr = "";
         bool found = false;
-
+        printBox(hArray, vArray, size);
         for (int i = 1; i < size; i++)
         {
             boxCount = checkBox(hArray, vArray, size, i);
@@ -117,11 +142,14 @@ int main()
         //////////////////////////////////
 
         ///////Editing output string///////
-        outputStr += "Problem #";
-        outputStr += problemCount + 48;
-        outputStr += "\n\n";
-        outputStr += boxCountStr;
-        outputStr += "\n*******************************************\n\n";
+        string result = "";
+        result += "Problem #";
+        result += problemCount + 48;
+        result += "\n\n";
+        result += boxCountStr;
+        result += "\n*******************************************\n\n";
+        cout << result;
+        outputStr += result;
         problemCount++;
     }
     iFile.close();
